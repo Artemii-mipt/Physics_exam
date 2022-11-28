@@ -1,0 +1,370 @@
+ \documentclass[a4paper,12pt]{article} 
+
+%Выравнивание названия таблиц по левому краю
+%\usepackage[nooneline]{caption} 
+%Размеры отступов 
+\usepackage[left=20mm, top=20mm, right=20mm, bottom=20mm, footskip=10mm]{geometry}
+
+%Рисунки
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+%Русский язык в формулах
+\usepackage{mathtext}
+
+%  Русский язык
+\usepackage[T2A]{fontenc}			
+\usepackage[utf8]{inputenc}			
+\usepackage[english,russian]{babel}	
+
+%Готические буквы
+\usepackage{amssymb}
+
+% Математика
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{wasysym}
+%Умная запятая: $0,2$ - число; $0, 2$ - перечисление
+\usepackage[icomma]
+
+%Цветные подписи в таблице
+\usepackage[table,xcdraw]{xcolor}
+\begin{document} 
+
+%Титульник 
+\begin{titlepage}
+	\begin{center}
+		\large 	МИНИСТЕРСТВО ОБРАЗОВАНИЯ И НАУКИ РОССИЙСКОЙ ФЕДЕРАЦИИ\\
+				МОСКОВСКИЙ ФИЗИКО-ТЕХНИЧЕСКИЙ ИНСТИТУТ \\
+				(НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ ИНСТИТУТ)\\ 
+				ФИЗТЕХ-ШКОЛА ЭЛЕКТРОНИКИ, ФОТОНИКИ \\
+				И МОЛЕКУЛЯРНОЙ ФИЗИКИ \\
+		
+		
+		\vspace{4.0 cm}
+		Вопрос по выбору \\ 
+		\LARGE \textbf{Измерение удельного заряда электрона методами магнитной фокусировки и магнетрона}
+	\end{center}
+	\vspace{3 cm} \large
+	
+	\begin{flushright}
+		выполнили студенты 2 курса \\
+		\textbf{Белостоцкий Артемий}\\
+		\textbf{Петрова София}\\
+	\end{flushright}
+	
+	\vfill
+
+	\begin{center}
+	Долгопрудный, 2021 г.
+	\end{center}
+\end{titlepage}                                                                      
+  
+\section*{Цель работы}
+\
+Определение отношения заряда электрона к его массе методом магнитной фокусировки и методом магнетрона.
+ 
+\section*{В работе используются}
+\begin{itemize}
+	\item Электронно-лучевая трубка
+	\item Соленоид
+	\item Вольтметр
+	\item Милливеберметр
+	\item Электронная лампа с цилиндрическим анодом
+	\item Соленоид
+	\item Вольтметр
+	\item Два амперметра
+	\end{itemize}
+
+
+
+\section*{Ход работы}
+\subsection*{Метод магнитной фокусировки}
+\
+Проведем измерение зависимости магнитного поля в соленоиде от тока в его обмотке с помощью милливеберметра. Будем переводить стрелку милливеберметра в удобное для измерений начальное положение, а затем, размыкая ключ в цепи, по величине отклонения стрелки определим магнитный поток. Данные занесем в Таблицу 1.
+
+\begin{table}[h]
+\caption{}
+\begin{center}
+\begin{tabular}{|
+>{}l |l|l|l|l|l|l|l|}
+\hline
+\textit{\textbf{$\Phi_0$\, мВб}} & 2   & 3    & 3    & 4   & 5    & 6    & 7    \\ \hline
+\textit{\textbf{$\Phi$, мВб}}    & 1,3 & 1,55 & 0,85 & 1,2 & 1,35 & 1,65 & 1,85 \\ \hline
+\textit{\textbf{$\Delta\Phi$, мВб}}   & 0,7 & 1,45 & 2,15 & 2,8 & 3,65 & 4,35 & 5,15 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+ ,где $\Phi_0$ - начальное положение стрелки милливеберметра, $\Phi$ - конечное, $\Delta\Phi = \Phi_0 - \Phi$ \\
+ 
+ Разделив $\Delta\Phi$ на $SN = 0,3 \ м^2$ можно рассчитать индукция поля B в соленоиде. Данные занесем в Таблицу 2.
+
+\newpage
+
+\begin{table}[h]
+\caption{}
+\begin{center}
+\begin{tabular}{|
+>{\columncolor[HTML]{FFFFFF}}l |l|l|l|l|l|l|l|l|}
+\hline
+\textit{\textbf{B, мТл}} & 2,33 & 4,83 & 7,17 & 9,33 & 12,17 & 14,50 & 17,17 & 0 \\ \hline
+\textit{\textbf{I, А}}   & 0,7  & 1,4  & 2,1  & 2,8  & 3,5   & 4,2   & 4,9   & 0 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+ 
+Оценим погрешности измеренных величин:
+$$
+\sigma_{\Phi} = \sigma_{\Phi_0} = 0,01 \ мВб - cистематическая \ погрешность \ милливеберметра
+$$
+$$
+\sigma_{\Delta\Phi} = \sqrt{\sigma_{\Phi}^2 + \sigma_{\Phi_0}^2} \approx 0,01  \ мВб
+$$
+$$
+\sigma_{B} = \frac{\sigma_{\Delta\Phi}}{SN} \approx 0,05 \ мТл
+$$
+По полученным данным построим калибровочный график $B(I)$.
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[scale=0.6]{graph1}
+	\end{center}
+	\caption{$Зависимость \ B(I)$}
+	\end{figure}
+
+По МНК рассчитаем коэффициента наклона:
+$$
+	k \approx 3,46 \pm 0,02 \ \frac{мТл}{А}
+$$
+
+\newpage
+
+Включим осциллограф. Постепенно увеличивая ток через соленоид будем фиксировать силу тока $I_ф$, при которой линия на осциллографе стягивается в точку и с помощью зависимости B(I) определим индукцию поля для этих значений тока $B_ф$. Данные занесем в Таблицу 3.
+ 
+\begin{table}[h]
+\caption{}
+\begin{center}
+\begin{tabular}{|
+>{{}}l |l|l|l|l|l|}
+\hline
+\textit{\textbf{n}}        & 1      & 2      & 3      & 4      & 5       \\ \hline
+\textit{\textbf{$I_ф$, А}}    & 0,62   & 1,28   & 1,92   & 2,61   & 3,31    \\ \hline
+\textit{\textbf{$B_ф$, мТл}}  & 2,15 & 4,43 & 6,64 & 9,03 & 11,45 \\ \hline
+\textit{\textbf{$\sigma_{B_ф}$, мТл}} & 0,01 & 0,03 & 0,04 & 0,05 & 0,07  \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+По данным Таблицы 3 построим график зависимости $B_ф(n)$.
+
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[scale=0.6]{graph2}
+	\end{center}
+	\caption{$Зависимость \ B_ф(n)$}
+	\end{figure}
+
+По МНК рассчитаем коэффициента наклона:
+$$
+	k \approx 2,22 \pm 0,02 \ мТл
+$$
+
+\newpage
+Рассчитаем удельный заряд электрона и оценим погрешность:
+$$
+\frac{e}{m} = \frac{8\pi^2 U}{k^2 L^2} \approx 1,78*10^{11} \frac{Кл}{кг},
+$$
+\
+ где U = 780 L = 0,265 м
+ $$
+ \sigma_{\frac{e}{m}} = \frac{e}{m} \frac{2\sigma_k}{k} \approx 0,03*10^{11}  \frac{Кл}{кг}
+ $$
+Окончательно:
+$$
+\frac{e}{m} =  (1,78 \pm 0,03)*10^{11} \frac{Кл}{кг}
+$$
+
+\subsection*{Метод магнетрона}
+\
+Установим потенциал на аноде $U_a$ = 72 В. Измерим зависимость анодного тока $I_а$ от тока через соленоид $I_m$. Используя коэффициент пропорциональности $K = 0,035 \frac{Тл}{А}$ между током через соленоид и величиной магнитной индукции получим зависимость $I_а(B)$. Измерения проведем для 5 разных значений анодного напряжения. Полученные данные занесем в таблицы.
+
+\begin{table}[h]
+\begin{center}
+\caption{}
+\begin{tabular}{|lll|lll|lll|}
+\hline
+\multicolumn{3}{|c|}{\cellcolor[HTML]{FFFFFF}\textit{\textbf{U   = 72В}}}                                                                         & \multicolumn{3}{c|}{\textit{\textbf{U = 80В}}}                                                                           & \multicolumn{3}{c|}{\textit{\textbf{U = 90В}}}                                                                           \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{FFFFFF}\textit{\textbf{Im, мА}}} & \multicolumn{1}{l|}{\textit{\textbf{Ia, мА}}} & \textit{\textbf{B, мТл}} & \multicolumn{1}{l|}{\textit{\textbf{Im, мА}}} & \multicolumn{1}{l|}{\textit{\textbf{Ia, мА}}} & \textit{\textbf{B, мТл}} & \multicolumn{1}{l|}{\textit{\textbf{Im, мА}}} & \multicolumn{1}{l|}{\textit{\textbf{Ia, мА}}} & \textit{\textbf{B, мТл}} \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{FFFFFF}\textit{\textbf{0}}}      & \multicolumn{1}{l|}{240}                      & 0                        & \multicolumn{1}{l|}{0}                        & \multicolumn{1}{l|}{232}                      & 0                        & \multicolumn{1}{l|}{0}                        & \multicolumn{1}{l|}{250}                      & 0                        \\ \hline
+\multicolumn{1}{|l|}{20}                                               & \multicolumn{1}{l|}{236}                      & 0,7                      & \multicolumn{1}{l|}{20}                       & \multicolumn{1}{l|}{238}                      & 0,7                      & \multicolumn{1}{l|}{20}                       & \multicolumn{1}{l|}{246}                      & 0,7                      \\ \hline
+\multicolumn{1}{|l|}{40}                                               & \multicolumn{1}{l|}{236}                      & 1,4                      & \multicolumn{1}{l|}{40}                       & \multicolumn{1}{l|}{238}                      & 1,4                      & \multicolumn{1}{l|}{40}                       & \multicolumn{1}{l|}{246}                      & 1,4                      \\ \hline
+\multicolumn{1}{|l|}{60}                                               & \multicolumn{1}{l|}{236}                      & 2,1                      & \multicolumn{1}{l|}{60}                       & \multicolumn{1}{l|}{238}                      & 2,1                      & \multicolumn{1}{l|}{60}                       & \multicolumn{1}{l|}{244}                      & 2,1                      \\ \hline
+\multicolumn{1}{|l|}{80}                                               & \multicolumn{1}{l|}{232}                      & 2,8                      & \multicolumn{1}{l|}{80}                       & \multicolumn{1}{l|}{240}                      & 2,8                      & \multicolumn{1}{l|}{80}                       & \multicolumn{1}{l|}{242}                      & 2,8                      \\ \hline
+\multicolumn{1}{|l|}{100}                                              & \multicolumn{1}{l|}{234}                      & 3,5                      & \multicolumn{1}{l|}{100}                      & \multicolumn{1}{l|}{242}                      & 3,5                      & \multicolumn{1}{l|}{100}                      & \multicolumn{1}{l|}{242}                      & 3,5                      \\ \hline
+\multicolumn{1}{|l|}{120}                                              & \multicolumn{1}{l|}{228}                      & 4,2                      & \multicolumn{1}{l|}{120}                      & \multicolumn{1}{l|}{240}                      & 4,2                      & \multicolumn{1}{l|}{120}                      & \multicolumn{1}{l|}{242}                      & 4,2                      \\ \hline
+\multicolumn{1}{|l|}{124}                                              & \multicolumn{1}{l|}{220}                      & 4,34                     & \multicolumn{1}{l|}{124}                      & \multicolumn{1}{l|}{236}                      & 4,34                     & \multicolumn{1}{l|}{140}                      & \multicolumn{1}{l|}{240}                      & 4,9                      \\ \hline
+\multicolumn{1}{|l|}{128}                                              & \multicolumn{1}{l|}{218}                      & 4,48                     & \multicolumn{1}{l|}{128}                      & \multicolumn{1}{l|}{238}                      & 4,48                     & \multicolumn{1}{l|}{144}                      & \multicolumn{1}{l|}{238}                      & 5,04                     \\ \hline
+\multicolumn{1}{|l|}{130}                                              & \multicolumn{1}{l|}{206}                      & 4,55                     & \multicolumn{1}{l|}{132}                      & \multicolumn{1}{l|}{246}                      & 4,62                     & \multicolumn{1}{l|}{146}                      & \multicolumn{1}{l|}{208}                      & 5,11                     \\ \hline
+\multicolumn{1}{|l|}{132}                                              & \multicolumn{1}{l|}{178}                      & 4,62                     & \multicolumn{1}{l|}{136}                      & \multicolumn{1}{l|}{228}                      & 4,76                     & \multicolumn{1}{l|}{148}                      & \multicolumn{1}{l|}{96}                       & 5,18                     \\ \hline
+\multicolumn{1}{|l|}{134}                                              & \multicolumn{1}{l|}{68}                       & 4,69                     & \multicolumn{1}{l|}{138}                      & \multicolumn{1}{l|}{132}                      & 4,83                     & \multicolumn{1}{l|}{152}                      & \multicolumn{1}{l|}{36}                       & 5,32                     \\ \hline
+\multicolumn{1}{|l|}{136}                                              & \multicolumn{1}{l|}{38}                       & 4,76                     & \multicolumn{1}{l|}{140}                      & \multicolumn{1}{l|}{54}                       & 4,9                      & \multicolumn{1}{l|}{156}                      & \multicolumn{1}{l|}{22}                       & 5,46                     \\ \hline
+\multicolumn{1}{|l|}{140}                                              & \multicolumn{1}{l|}{20}                       & 4,9                      & \multicolumn{1}{l|}{144}                      & \multicolumn{1}{l|}{30}                       & 5,04                     & \multicolumn{1}{l|}{160}                      & \multicolumn{1}{l|}{14}                       & 5,6                      \\ \hline
+\multicolumn{1}{|l|}{144}                                              & \multicolumn{1}{l|}{12}                       & 5,04                     & \multicolumn{1}{l|}{148}                      & \multicolumn{1}{l|}{16}                       & 5,18                     & \multicolumn{1}{l|}{}                         & \multicolumn{1}{l|}{}                         &                          \\ \hline
+\multicolumn{1}{|l|}{148}                                              & \multicolumn{1}{l|}{8}                        & 5,18                     & \multicolumn{1}{l|}{}                         & \multicolumn{1}{l|}{}                         &                          & \multicolumn{1}{l|}{}                         & \multicolumn{1}{l|}{}                         &                          \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\newpage
+
+\begin{table}[h]
+\caption{}
+\begin{center}
+\begin{tabular}{|lll|lll|}
+\hline
+\multicolumn{3}{|c|}{\cellcolor[HTML]{FFFFFF}\textit{\textbf{U   = 100В}}}                                                                        & \multicolumn{3}{c|}{\textit{\textbf{U =   110В}}}                                                                        \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{FFFFFF}\textit{\textbf{Im, мА}}} & \multicolumn{1}{l|}{\textit{\textbf{Ia, мА}}} & \textit{\textbf{B, мТл}} & \multicolumn{1}{l|}{\textit{\textbf{Im, мА}}} & \multicolumn{1}{l|}{\textit{\textbf{Ia, мА}}} & \textit{\textbf{B, мТл}} \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{FFFFFF}\textit{\textbf{0}}}      & \multicolumn{1}{l|}{244}                      & 0                        & \multicolumn{1}{l|}{0}                        & \multicolumn{1}{l|}{246}                      & 0                        \\ \hline
+\multicolumn{1}{|l|}{20}                                               & \multicolumn{1}{l|}{244}                      & 0,7                      & \multicolumn{1}{l|}{20}                       & \multicolumn{1}{l|}{242}                      & 0,7                      \\ \hline
+\multicolumn{1}{|l|}{40}                                               & \multicolumn{1}{l|}{242}                      & 1,4                      & \multicolumn{1}{l|}{40}                       & \multicolumn{1}{l|}{242}                      & 1,4                      \\ \hline
+\multicolumn{1}{|l|}{60}                                               & \multicolumn{1}{l|}{240}                      & 2,1                      & \multicolumn{1}{l|}{60}                       & \multicolumn{1}{l|}{242}                      & 2,1                      \\ \hline
+\multicolumn{1}{|l|}{80}                                               & \multicolumn{1}{l|}{240}                      & 2,8                      & \multicolumn{1}{l|}{80}                       & \multicolumn{1}{l|}{242}                      & 2,8                      \\ \hline
+\multicolumn{1}{|l|}{100}                                              & \multicolumn{1}{l|}{242}                      & 3,5                      & \multicolumn{1}{l|}{100}                      & \multicolumn{1}{l|}{242}                      & 3,5                      \\ \hline
+\multicolumn{1}{|l|}{120}                                              & \multicolumn{1}{l|}{242}                      & 4,2                      & \multicolumn{1}{l|}{120}                      & \multicolumn{1}{l|}{244}                      & 4,2                      \\ \hline
+\multicolumn{1}{|l|}{136}                                              & \multicolumn{1}{l|}{240}                      & 4,76                     & \multicolumn{1}{l|}{140}                      & \multicolumn{1}{l|}{242}                      & 4,9                      \\ \hline
+\multicolumn{1}{|l|}{140}                                              & \multicolumn{1}{l|}{240}                      & 4,9                      & \multicolumn{1}{l|}{160}                      & \multicolumn{1}{l|}{228}                      & 5,6                      \\ \hline
+\multicolumn{1}{|l|}{144}                                              & \multicolumn{1}{l|}{234}                      & 5,04                     & \multicolumn{1}{l|}{162}                      & \multicolumn{1}{l|}{140}                      & 5,67                     \\ \hline
+\multicolumn{1}{|l|}{148}                                              & \multicolumn{1}{l|}{244}                      & 5,18                     & \multicolumn{1}{l|}{164}                      & \multicolumn{1}{l|}{98}                       & 5,74                     \\ \hline
+\multicolumn{1}{|l|}{152}                                              & \multicolumn{1}{l|}{236}                      & 5,32                     & \multicolumn{1}{l|}{168}                      & \multicolumn{1}{l|}{46}                       & 5,88                     \\ \hline
+\multicolumn{1}{|l|}{156}                                              & \multicolumn{1}{l|}{144}                      & 5,46                     & \multicolumn{1}{l|}{172}                      & \multicolumn{1}{l|}{24}                       & 6,02                     \\ \hline
+\multicolumn{1}{|l|}{160}                                              & \multicolumn{1}{l|}{54}                       & 5,6                      & \multicolumn{1}{l|}{176}                      & \multicolumn{1}{l|}{16}                       & 6,16                     \\ \hline
+\multicolumn{1}{|l|}{164}                                              & \multicolumn{1}{l|}{26}                       & 5,74                     & \multicolumn{1}{l|}{}                         & \multicolumn{1}{l|}{}                         &                          \\ \hline
+\multicolumn{1}{|l|}{168}                                              & \multicolumn{1}{l|}{16}                       & 5,88                     & \multicolumn{1}{l|}{}                         & \multicolumn{1}{l|}{}                         &                          \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Оценим погрешности:
+$$
+\sigma_{I_m} = 2 \ мА - \ систематическая \ погрешность \ амперметра
+$$
+$$
+\sigma_{I_а} = 1 \ мА - \ систематическая \ погрешность \ амперметра
+$$
+$$
+\sigma_{U_a} = 1 \ В - \ систематическая \ погрешность \ вольтметра
+$$
+$$
+\sigma_{B} = K * \sigma_{I_m} = 0,07 \ мТл
+$$
+$$
+\sigma_{B^2} = 2*\sigma_{B} = 0,14 \ мТл
+$$
+Построим семейство зависимостей анодного тока от магнитного $I_a(B)$
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale=0.5]{graph3}
+	\end{center}
+	\caption{$Зависимость \ I(B) \ для \ U_a = 72В$}
+	\end{figure}
+
+\newpage
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale=0.5]{graph4}
+	\end{center}
+	\caption{$Зависимость \ I(B) \ для \ U_a = 80В$}
+	\end{figure}
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale=0.5]{graph5}
+	\end{center}
+	\caption{$Зависимость \ I(B) \ для \ U_a = 90В$}
+	\end{figure}
+
+\newpage
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale=0.5]{graph6}
+	\end{center}
+	\caption{$Зависимость \ I(B) \ для \ U_a = 100В$}
+	\end{figure}
+	
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale=0.5]{graph7}
+	\end{center}
+	\caption{$Зависимость \ I(B) \ для \ U_a = 110В$}
+	\end{figure}
+
+\newpage
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale=0.5]{graph8}
+	\end{center}
+	\caption{$Семейство \ зависимостей \ I(B)$ }
+	\end{figure}
+
+По участкам графика с максимальном значении, для каждого $U_a$ определим критическое значение индукции магнитного поля $B_{кр}$. Занесем данные в таблицу.
+
+\newpage
+
+\begin{table}[h!]
+\caption{}
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline 
+{{$B_{кр}$, мТл}} & {{$U_а$, В}} & \textit{\textbf{$B_{кр}^2$, $мТл^2$}} \\ \hline
+{4,62}              & {72}             & {21,34}               \\ \hline
+4,83                       & 80                      & 23,33                        \\ \hline
+5,11                       & 90                      & 26,11                        \\ \hline
+5,46                       & 100                     & 29,81                        \\ \hline
+5,67                       & 110                     & 32,15                        \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Построим график зависимости $B_{кр}^2(U_a)$ по данным таблицы:
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale=0.5]{graph9}
+	\end{center}
+	\caption{Зависимостьё	 $B_{кр}^2(U_a)$}
+	\end{figure}
+
+Из МНК найдем коэффициент наклона k и оценим погрешность:
+$$
+	k \approx 0,294 \pm 0,002 \frac{мТл^2}{В}
+$$
+
+Рассчитаем удельный заряд электрона и оценим погрешность:
+$$
+	\frac{e}{m} = \frac{8}{k  r_a^2} \approx 1,88*10^{11} \frac{Кл}{кг}
+$$
+где $r_a$ = 12 мм - радиус анода
+$$
+	\sigma_{\frac{e}{m}} = \frac{e}{m} \frac{\sigma_k}{k} \approx 0,01*10^{11}  \frac{Кл}{кг}
+$$
+Окончательно:
+$$
+\frac{e}{m} = (1,88 \pm 0,01)*10^{11}  \frac{Кл}{кг}
+$$
+
+\newpage
+
+\section*{Выводы}
+\
+
+1.Для метода магнитной фокусировки получен удельный заряд электрона$\frac{e}{m} = (1,78 \pm 0,03)*10^{11}\frac{Кл}{кг}$, что в пределах погрешности совпадает с табличный значением $\frac{e}{m} = 1,76*10^{11}\frac{Кл}{кг}$
+
+2.Для метода магнетрона также получен удельный заряд электрона $\frac{e}{m} = (1,88 \pm 0,01)*10^{11}  \frac{Кл}{кг}$, что по порядку величины совпадает с табличным значением, но не совпадает численно. Расхождение составляет примерно 6 \% от табличного.
+
+3.Данное расхождение может быть вызвано неточным измерением зависимости B(I), из-за резкого спада для зависимости B(I)	
+
+	
+	
+\end{document}
